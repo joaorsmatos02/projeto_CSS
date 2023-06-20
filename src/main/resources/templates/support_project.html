@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section>
+    <h2 id="error" th:text="${error}"> </h2>
+    <h2> Escolha o ID do Projeto que deseja apoiar</h2>
+    <form th:action="@{/support-project}" method="post">
+      <select th:name="selectedProject">
+        <option th:each=" p : ${projects} " th:value="${p.id}" th:text="${p.id}"> </option>
+      </select>
+      <input type="submit" value="Apoiar Projeto" />
+    </form>
+
+  </section>
+</body>
+</html>

@@ -1,0 +1,18 @@
+h1 {
+    color: darkcyan;
+}
+
+ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+}
+
+li{
+    padding-right: 40px;
+}
+
+#error{
+    color: red;
+}

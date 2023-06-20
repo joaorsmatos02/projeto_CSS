@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section>
+    <h2> Criar Um Projeto</h2>
+    <h2 id="error" th:text="${error}"> </h2>
+    <form th:action="@{/create-project}" method="post" enctype="multipart/form-data">
+      <h4>Titulo</h4>
+      <input type="text" name="title" />
+      <h4>Tema</h4>
+      <select th:name="selectedTheme">
+        <option th:each=" t : ${themes} " th:value="${t.id}" th:text="${t.theme}" >   </option>
+      </select>
+      <h4>Descrição</h4>
+      <input type="text" name="description" />
+      <h4>Data de Expiração</h4>
+      <input type="datetime-local" name="projectDate" />
+      <h4>Insira o PDF</h4>
+      <input type="file" value="Escolha o PDF do Projeto" name="pdf">
+      <input type="submit" value="Criar Projeto" />
+    </form>
+
+  </section>
+</body>
+</html>

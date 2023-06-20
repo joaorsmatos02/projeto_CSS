@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <section>
+        <table >
+            <tr>
+                <th>Id do Projeto:</th>
+                <td th:text="${project.id}"> 1</td>
+            </tr>
+
+            <tr>
+                <th>Tema:</th>
+                <td th:text="${project.theme}"> tema</td>
+                <!--<td th:text="${customer.name}"></td>-->
+            </tr>
+            <tr>
+                <th>Titulo:</th>
+                <td th:text="${project.title}">titulo</td>
+
+            </tr>
+            <tr>
+                <th>Descrição:</th>
+                <td th:text="${project.description}"> descrição </td>
+                <!--<td th:text="${customer.name}"></td>-->
+            </tr>
+            <tr>
+                <th>Data de Expiração:</th>
+                <td th:text="${#temporals.format(project.expirationDate, 'dd/MM/yyyy HH:mm:ss')}"> Data</td>
+
+            </tr>
+            <tr>
+                <th>Delegado do Projeto:</th>
+                <td th:text="${project.delegateName}"> delegado </td>
+
+            </tr>
+
+        </table>
+    </section>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h2 id="error" th:text="${error}"> </h2>
+
+  <h2> Criar um utilizador para o sistema</h2>
+  <form th:action="@{/create}" method="post">
+    <h4>Insira o seu Cartão de Cidadão</h4>
+    <input type="text" th:name="voterCC" />
+    <h4>Insira o seu Nome</h4>
+    <input type="text" th:name="name" />
+    <select th:name="type">
+      <option>Delegado</option>
+      <option>Votador</option>
+    </select>
+    <input type="submit" value="Criar Conta" />
+  </form>
+</body>
+</html>

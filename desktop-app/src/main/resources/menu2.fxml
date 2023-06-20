@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+
+<StackPane fx:id="pane" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.desktopapp.menu.Menu2Controller">
+
+    <HBox fx:id="topHbox" alignment="top_left">
+        <Button fx:id="logOut" text="Voltar" onAction="#goBack" />
+        <Label fx:id="title" text="Democracia 2" alignment="top_left"></Label>
+    </HBox>
+
+    <GridPane fx:id="menuGrid" alignment="center">
+        <children>
+            <Button fx:id="presentProject" text="Apresentar projeto de lei" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#presentProject" />
+            <Button fx:id="chooseDelegate" text="Escolher delegado" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#chooseDelegate" />
+        </children>
+    </GridPane>
+
+</StackPane>

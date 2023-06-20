@@ -1,0 +1,43 @@
+<!--feito-->
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section>
+    <h2 id="error" th:text="${error}"> </h2>
+
+    <h2>Projetos Disponiveis:</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>ID do Projeto</th>
+        <th>Titulo</th>
+        <th>Tema</th>
+        <th>Detalhes</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr>
+        <form th:if="${projects.empty}">
+          <td colspan="5">Sem projetos</td>
+        </form>
+      </tr>
+      <tr th:each=" p : ${projects}">
+        <form th:action="@{/project/} + ${p.id}" method="get" >
+          <td th:text="${p.id}"> ID </td>
+          <td th:text="${p.title}"> Titulo </td>
+          <td th:text="${p.theme}"> Tema </td>
+          <td><input type="submit" value="Abrir Projeto"/></td>
+        </form>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>

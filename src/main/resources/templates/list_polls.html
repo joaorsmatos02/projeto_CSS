@@ -1,0 +1,36 @@
+<!--feito-->
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+<section>
+    <h2>Votações em Curso:</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Id da Votação</th>
+            <th>Titulo</th>
+            <th>Tema</th>
+            <th>Descrição</th>
+            <th>Data</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="p : ${polls}">
+            <td th:text="${p.id}"> ID </td>
+            <td th:text="${p.title}">  Titulo </td>
+            <td th:text="${p.theme}"> Tema </td>
+            <td th:text="${p.description}"> Descrição </td>
+            <td th:text="${#temporals.format(p.expirationDate, 'dd/MM/yyyy HH:mm:ss')}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>

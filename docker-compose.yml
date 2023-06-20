@@ -1,0 +1,59 @@
+version: "3"
+
+networks:
+  dbnet:
+    driver: bridge
+
+services:
+  pgserver:
+    build:
+      context: .
+      dockerfile: postgres.dockerfile
+    container_name: pgserver
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    networks:
+      - dbnet
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=testdb
+    restart: unless-stopped
+
+  # APP*****************************************
+  springbootapp:
+    image: springbootapp:latest
+    build:
+      context: .
+    container_name: springbootapp
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    depends_on:
+      - pgserver
+    networks:
+      - dbnet
+    command: /bin/bash
+
+  tests:
+    build:
+      context: .
+      dockerfile: tests.dockerfile
+    ports:
+      - "8081:8081"
+    container_name: tests
+    environment:
+      - SPRING_PROFILES_ACTIVE=test
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:testdb
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.h2.Driver
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=sa
+
+volumes:
+  postgres-data:

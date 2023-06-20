@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Label?>
+
+<StackPane fx:id="pane" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.desktopapp.list_polls.ListPollsController">
+
+	<HBox fx:id="topHbox" alignment="top_left">
+		<children>
+			<Button fx:id="goBack" text="Voltar" onAction="#goBack" />
+			<Label fx:id="title" text="Consultar votações em curso"></Label>
+		</children>
+	</HBox>
+
+	<TableView fx:id="table"/>
+</StackPane>

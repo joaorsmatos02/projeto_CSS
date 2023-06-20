@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+</head>
+<body>
+  <section>
+
+    <form th:action="@{/vote/} + ${poll}"  method="post">
+      <h4> Escolha o que pretende votar na proposta <span th:text="${poll}" ></span></h4>
+      <h4 th:text="${delegateVote}">  </h4>
+      <select th:name="vote">
+
+        <option th:each=" o : ${options} " th:value="${o}" th:text="${o}"> voto </option>
+
+      </select>
+      <input type="submit" value="Submeter Voto" />
+    </form>
+
+  </section>
+</body>
+</html>

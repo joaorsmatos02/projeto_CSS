@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand');
+
+
+/* /////////// */
+/* // Fundo // */
+/* /////////// */
+
+#pane {
+	-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2a4858, #5b5b5b);
+}
+
+/* ///////////// */
+/* // Titulos // */
+/* ///////////// */
+
+#title {
+	-fx-font-size:45;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+/* ////////////////////// */
+/* // Tudo por omissao // */
+/* ////////////////////// */
+
+* {
+	-fx-font-family: Quicksand;
+	-fx-font-smoothing-type: gray;
+	-fx-text-fill: white;
+}
+
+/* //////////// */
+/* // Botoes // */
+/* //////////// */
+
+.button {
+	-fx-font-size:17.5;
+	-fx-background-color: transparent;
+	-fx-border-color:white;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	-fx-border-width: 3 3 3 3;
+}
+
+.button:hover {
+	-fx-font-size:17.5;
+	-fx-background-color: transparent;
+	-fx-border-color:white;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	-fx-border-width: 1 1 1 1;
+}
+
+.button:pressed {
+	-fx-font-size:17.5;
+	-fx-background-color: transparent;
+	-fx-border-color:white;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	-fx-border-width: 0 0 0 0;
+}
+
+/* /////////////// */
+/* Campos de texto */
+/* /////////////// */
+
+.text-field {
+	-fx-font-size:17.5;
+	-fx-background-color:transparent;
+	-fx-border-color:white;
+	-fx-text-fill: white;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	-fx-border-width: 3 3 3 3;
+}
+
+.text-field:focused {
+	-fx-font-size:17.5;
+	-fx-background-color:transparent;
+	-fx-border-color:white;
+	-fx-text-fill: white;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	-fx-border-width: 1 1 1 1;
+}
+
+/* //////////// */
+/* // Tabelas// */
+/* //////////// */
+
+.table-view {
+	-fx-background-color: transparent;
+	-fx-border-color:white;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	-fx-border-width: 0 3 3 0;
+}
+
+.table-view .column-header-background {
+	-fx-background-color: transparent;
+}
+
+.table-view .column-header-background .filler{
+	-fx-background-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 3 3 0;
+    -fx-font-size:16;
+}
+
+.table-view .table-column {
+	-fx-alignment: CENTER;
+}
+
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-border-width: 0 3 3 0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-text-fill: white;
+    -fx-font-size:16;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #2a485820;
+}
+
+.table-row-cell:even{
+    -fx-background-color: #5b5b5b20;
+}
+
+.table-row-cell:hover{
+    -fx-background-color: #00000025;
+}
+
+.table-view .thumb {
+	-fx-background-color: #00000025;
+}
+
+.table-view .scroll-bar {
+	-fx-background-color: transparent;
+}
+
+.table-view .increment-button:hover, .table-view .decrement-button:hover  {
+    -fx-background-color:#00000025;
+}
+
+.table-view .arrow {
+	-fx-background-color: white;
+}
+
+/* ////////////////// */
+/* // Botoes radio // */
+/* ////////////////// */
+
+.radio-button {
+	-fx-font-size:15;
+}
+
+/* /////////// */
+/* / Alertas / */
+/* /////////// */
+
+.dialog-pane{
+    -fx-background-color: #2a4858;
+}
+
+.dialog-pane:header *.header-panel {
+    -fx-background-color: #2a4858;
+}
+
+/* //////////// */
+/* // Outros // */
+/* //////////// */
+
+
+#projectLabel {
+	-fx-font-size:17.5;
+}
+
+#voteLabel {
+	-fx-font-size:17.5;
+}
+
+#loginLabel {
+	-fx-font-size:17.5;
+}
+
+#id {
+	-fx-font-size:17.5;
+}
+
+#theme {
+	-fx-font-size:17.5;
+}
+
+#projectTitle {
+	-fx-font-size:17.5;
+}
+
+#description {
+	-fx-font-size:17.5;
+}
+
+#expiration {
+	-fx-font-size:17.5;
+}
+
+#nrSupporters {
+	-fx-font-size:17.5;
+}
+
+#delegate {
+	-fx-font-size:17.5;
+}
